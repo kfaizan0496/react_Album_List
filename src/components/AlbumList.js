@@ -17,4 +17,4 @@ const AlbumsList = (props) => {
   )
 }
 
-export default AlbumsList;
+export default AlbumsList
