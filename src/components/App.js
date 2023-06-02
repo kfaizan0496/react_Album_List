@@ -10,8 +10,24 @@ class App extends Component {
       updateAlbum: {}
     }
   }
- render(){ return (
+
+  //  componentDidMount  function to fetch all the List from the ApI
+  componentDidMount = async () => {
+    const albums = await fetch('https://jsonplaceholder.typicode.com/albums')
+      .then((response) => response.json())
+      .then((json) =>{
+        console.log(json)
+        return json;
+      }
+     );
+    this.setState({
+      albums
+    })
+  }
+
   
+ render(){ return (
+
  )
 }
 }
