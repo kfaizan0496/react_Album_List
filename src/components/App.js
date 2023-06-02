@@ -67,6 +67,50 @@ class App extends Component {
   }
   
 
+  //This function  is used to take album object from albums list
+  //  and set  the state for update albums
+  setUpdateAlbum = async (album) => {
+    this.setState({
+      updateAlbum: album
+    })
+  }
+
+
+  //updateAlbumInList function Updates The Album data 
+  // like (album id,UpdateTitle,updateUserid, oldAlbum and then update and set state )
+
+  updateAlbumInList = async (id, updateTitle, updateUserid, oldAlbum) => {
+    const albums = this.state.albums;
+    const index = albums.indexOf(oldAlbum);
+    let updatedAlbum = [];
+    if (id < 100) {
+      updatedAlbum = await fetch(`https://jsonplaceholder.typicode.com/albums/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify({
+          userId: updateUserid,
+          id: id,
+          title: updateTitle,
+        }),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      }).then((response) => response.json()).then((json) => json);
+    } else {
+      updatedAlbum = {
+        userId: updateUserid,
+        id: id,
+        title: updateTitle
+      }
+    }
+    albums[index] = updatedAlbum;
+    this.setState({
+      albums: albums
+    })
+    alert("Update Successfully done")
+  }
+  
+
+
   
  render(){ return (
 
