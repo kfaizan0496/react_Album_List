@@ -55,6 +55,18 @@ class App extends Component {
   }
   
 
+  //This function  is used to take album id from albums list and then delete 
+  // the album from albums list and update state....
+  deleteAlbumFromList = (id) => {
+    fetch(`https://jsonplaceholder.typicode.com/albums/${id}`, { method: 'DELETE', })
+    const newAlbums = this.state.albums.filter((album) => album.id !== id);
+    alert("Your Album Deleted successfully");
+    this.setState({
+      albums: newAlbums,
+    })
+  }
+  
+
   
  render(){ return (
 
