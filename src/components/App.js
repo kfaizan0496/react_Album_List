@@ -25,6 +25,36 @@ class App extends Component {
     })
   }
 
+
+  //addAlbumToList function is used to Add The Album in the Album List
+  
+  addAlbumToList = (userId, title) => {
+    fetch('https://jsonplaceholder.typicode.com/albums', {
+      method: 'POST',
+      body: JSON.stringify({
+        userId: userId,
+        id: this.state.count,
+        title: title,
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    }).then((response) => response.json()).then((json) => json);
+    const length = this.state.albums.length;
+    const lastId = this.state.albums[length - 1].id;
+    const album = {
+      userId: userId,
+      id: lastId + 1,
+      title: title,
+    }
+    this.setState({
+      albums: [...this.state.albums, album]
+    })
+    toast.success("New Album added successfully in the bottom!!")
+    // alert("New Album added successfully in the bottom");
+  }
+  
+
   
  render(){ return (
 
