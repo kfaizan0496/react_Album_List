@@ -1,4 +1,9 @@
 import React, { Component } from 'react'
+import { Routes, Route } from "react-router-dom";
+import AddAlbum from './AddAlbum.js';
+import AlbumsList from './AlbumList';
+import UpdateAlbum from './UpdateAlbums.js';
+import { toast } from 'react-toastify';
 
 
 class App extends Component {
@@ -112,10 +117,17 @@ class App extends Component {
 
 
   
- render(){ return (
-
- )
-}
+  render() {
+    return (
+      <>
+        <Routes>
+          <Route path='/' element={<AlbumsList albums={this.state.albums} setUpdateAlbum={this.setUpdateAlbum} deleteAlbumFromList={this.deleteAlbumFromList} />}></Route>
+          <Route path='/add-album' element={<AddAlbum addAlbumToList={this.addAlbumToList} />}></Route>
+          <Route path='/update-album' element={<UpdateAlbum album={this.state.updateAlbum} updateAlbumInList={this.updateAlbumInList} />}></Route>
+        </Routes>
+      </>
+    )
+  }
 }
 
 export default App;
