@@ -2,14 +2,20 @@ Hoisting Link ::https://react-album-app.web.app/
 
 
 
-Description ::Album List is a react web Application ....
-              User Fetch All The Albums From The 
-              Api -->`https://jsonplaceholder.typicode.com/albums/${id}` and Showing it To The Home                 Page in Browser
+Description ::
+Album List is a react web Application
+
+User Fetch All The Albums From The
+Api -->"https://jsonplaceholder.typicode.com/albums/${id}"
+and Showing it To The Home Page in Browser
+
+
               
- Features:: (a)ADD ==> User can Create Albums and Add To The Album Lists.....
-            (b)UPDATE ==> User can Update the data of that Album...
-            (c)READ ==> User fetch all the Albums from the API....
-            (d)DELETE ==> User can also Delete The Albums From The Album Lists...
+ Features::
+ (a)ADD ==> User can Create Albums and Add To The Album Lists
+ (b)UPDATE ==> User can Update the data of that Album
+ (c)READ ==> User fetch all the Albums from the API
+ d)DELETE ==> User can also Delete The Albums From The Album Lists
 
 
 
