@@ -7,7 +7,7 @@ const AddAlbum = (props) => {
   //This function is used to get all the inputs like UserId and Title then call 
   // AddAlbum function for add it on the Album lists
 
-  const getAlbumFormData = () => {
+  const getDataAlbumForm = () => {
     const userId = document.getElementById('userid-inp').value;
     const title = document.getElementById('title-inp').value;
     props.addAlbumToList(Number(userId), title)
@@ -33,7 +33,7 @@ const AddAlbum = (props) => {
           <label for="exampleInputEmail1" className="form-label">  Enter Album Title :</label>
           <input type="text" className="form-control" id='title-inp' aria-describedby="emailHelp"/>  
          <Link to='/'>
-          <button  onClick={getAlbumFormData} className="btn btn-primary mt-5">Add To List</button> 
+          <button  onClick={getDataAlbumForm} className="btn btn-primary mt-5">Add To List</button> 
          </Link>
      </div>
    </form> 

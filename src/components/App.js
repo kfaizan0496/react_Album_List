@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { ToastContainer } from "react-toastify";
 import { Routes, Route } from "react-router-dom";
 import AddAlbum from './AddAlbum.js';
 import AlbumsList from './AlbumList';
@@ -36,7 +37,9 @@ export default class App extends Component {
   deleteAlbumFromList = (id) => {
     fetch(`https://jsonplaceholder.typicode.com/albums/${id}`, { method: 'DELETE', })
     const newAlbums = this.state.albums.filter((album) => album.id !== id);
-    alert("Your Album Deleted successfully");
+    toast.success("Your Album Deleted successfully From The List")
+
+    
     this.setState({
       albums: newAlbums,
     })
@@ -84,7 +87,9 @@ export default class App extends Component {
     this.setState({
       albums: albums
     })
-    alert("Update Successfully done")
+    toast.success("Album Updated Successfully")
+    
+   
   }
   
 
@@ -114,13 +119,14 @@ export default class App extends Component {
       albums: [...this.state.albums, album]
     })
     toast.success("New Album added successfully in the bottom!!")
-    // alert("New Album added successfully in the bottom");
+   
   }
   
 
   render() {
     return (
       <>
+        <ToastContainer />
         <Routes>
           <Route path='/' element={<AlbumsList albums={this.state.albums} setUpdateAlbum={this.setUpdateAlbum} deleteAlbumFromList={this.deleteAlbumFromList} />}></Route>
           <Route path='/add-album' element={<AddAlbum addAlbumToList={this.addAlbumToList} />}></Route>

@@ -6,7 +6,8 @@ import App from './components/App';
 
 //  use React Bootstrap for better styling 
 import "bootstrap/dist/css/bootstrap.min.css";
-import 'react-toastify/dist/ReactToastify.css';
+// import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css'
 
 
 
